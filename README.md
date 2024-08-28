@@ -14,7 +14,7 @@ python -m venv venv
 ```
 Activar el entorno virtual para instalar las dependencias
 ```bash
-venv\Scritps\activate
+venv\Scripts\activate
 ```
 Ejecutamos el siguiente comando para realizar la instalación
 ```bash
