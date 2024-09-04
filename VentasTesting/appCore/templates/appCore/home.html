@@ -1,5 +1,5 @@
 {% extends 'appCore/base.html' %}
-{% block title%} MGM - Inicio {% endblock%}
+{% block title%} MGM - Inicio {% endblock %}
 {% block content %}
 <section class="hero-sec">
     <h2>Bienvenido {{ user.first_name}} !</h2>
@@ -11,7 +11,7 @@
                 <a href="#">Gestion de Ventas</a>
             </li>
             <li>
-                <a href="#">Administracion Clientes</a>
+                <a href="{% url 'clientes'%}">Administracion Clientes</a>
             </li>
             <li>
                 <a href="#">Administracion Productos</a>
