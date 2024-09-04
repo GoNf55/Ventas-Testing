@@ -1,0 +1,12 @@
+{% extends 'appCore/base.html' %}
+
+{% block title %} MGM - Log In {% endblock %}
+{% block content %}
+{% load crispy_forms_tags %}
+<h1>Registro</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ formulario | crispy }}
+    <button type="submit">Registrarse</button>
+</form>
+{% endblock %}

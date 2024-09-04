@@ -1,0 +1,22 @@
+{% extends 'appCore/base.html' %}
+{% block title%} MGM - Inicio {% endblock%}
+{% block content %}
+<section>
+    <h2>Bienvenido {{ user.first_name}} !</h2>
+</section>
+<section>
+    <div>
+        <ul>
+            <li>
+                <a href="#">Gestion de Ventas</a>
+            </li>
+            <li>
+                <a href="#">Administracion Clientes</a>
+            </li>
+            <li>
+                <a href="#">Administracion Productos</a>
+            </li>
+        </ul>
+    </div>
+</section>
+{% endblock %}
