@@ -27,5 +27,147 @@ body{
 }
 
 /*------------home---------------*/
+.hero-sec{
+    width: 100;
+    display: flex;
+    justify-content: center;
+}
+.hero-sec h1{
+    width: 50%;
+}
 
-/* templates administracion de clientes */
+.opciones-sec{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.opciones-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.opciones-container ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.opciones-container ul li{
+
+}
+.opciones-container ul li a{
+
+}
+
+
+/* -------------- templates administracion de clientes ---------------- */
+/* --- principal ----------------------------*/
+.title-sec{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 16px;
+}
+.clientes-sec{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Estilos de tabla clientes */
+.div-clientes{
+    margin: 20px;
+    border: solid 1px black;
+    width: 90%;
+    height: 50vh;
+    overflow-y: auto;
+    border-radius: 8px; 
+    background-color: #fff; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+.div-clientes__table{
+    border: none;
+    width: 100%;
+    border-collapse: collapse;
+}
+.div-clientes__table th,
+.div-clientes__table td {
+    border: 1px solid #ddd; 
+    padding: 12px;
+    text-align: left; 
+}
+
+.div-clientes__table th {
+    background-color: #f2f2f2; 
+    position: sticky; 
+    top: 0; 
+    z-index: 1;
+    font-weight: bold; 
+}
+
+.div-clientes__table tr:nth-child(even) {
+    background-color: #f9f9f9; 
+}
+
+.div-clientes__table tr:hover {
+    background-color: #f1f1f1; 
+}
+
+td button{
+    border-radius: 10px;
+    border: solid 1px black;
+    margin: 5px;
+    padding: 5px;
+    
+}
+.opts-cliente-table{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.options-clientes{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 90%;
+}
+.options-clientes button{
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    width: 200px;
+}
+
+/* --- add y mod clientes -------------- */
+/* Sección del título */
+.title-sec {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.title-sec h2 {
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Sección del formulario add y mod */
+.clientes-addmod-form-sec {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.clientes-addmod-form-sec__div {
+    display: flex;
+    flex-direction: column;
+}
+.clientes-addmod-form-sec__div form{
+
+}

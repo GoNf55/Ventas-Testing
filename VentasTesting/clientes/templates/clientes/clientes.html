@@ -2,37 +2,52 @@
 {% block title%} MGM - Administracion Clientes {% endblock %}
 {% block content %}
 {% load crispy_forms_tags %}
-<section >
-    <h2>Listado de clientes</h2>
+<section class="title-sec">
+    <h2>Administración de clientes</h2>
 </section>
-<section>
+<section class="clientes-sec">
 <!-- aca iria el listado de clientes-->
- <div>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Email</th>
-                <th>Teléfono</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for cliente in clientes_list %}
+    <div class="div-clientes">
+        <table border="1" class="div-clientes__table">
+            <thead>
                 <tr>
-                    <td>{{ cliente.nombre }}</td>
-                    <td>{{ cliente.apellido }}</td>
-                    <td>{{ cliente.email }}</td>
-                    <td>{{ cliente.telefono }}</td>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Email</th>
+                    <th>Teléfono</th>
+                    <th>Opciones</th>
                 </tr>
-            {% endfor %}
-        </tbody>
-    </table>
- </div>
- <div>
-    <button>Agregar cliente</button>
-    <button>Eliminar cliente</button>
-    <button>Modificar cliente</button>
- </div>
+            </thead>
+            <tbody>
+                {% for cliente in clientes_list %}
+                    <tr>
+                        <td>{{ cliente.nombre }}</td>
+                        <td>{{ cliente.apellido }}</td>
+                        <td>{{ cliente.email }}</td>
+                        <td>{{ cliente.telefono }}</td>
+                        <td class="opts-cliente-table">
+                            <a href="{% url 'modcliente' cliente.id_cliente %}">
+                                <button>Modificar</button>
+                            </a>
+                            <form action="{% url 'delcliente' cliente.id_cliente %}" method="post" onsubmit="return confirmarEliminacion()">
+                                {% csrf_token %}
+                                <button class="opt-cliente-del-btn" type="submit">Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="options-clientes">
+        <a href="{% url 'addcliente' %}">
+            <button>Agregar cliente</button>
+        </a>
+    </div>
 </section>
+<script type="text/javascript">
+    function confirmarEliminacion() {
+        return confirm("¿Estás seguro de que deseas eliminar este cliente?");
+    }
+</script>
 {% endblock %}
