@@ -31,7 +31,7 @@
                             <a href="{% url 'modproducto' producto.id_producto %}">
                                 <button>Modificar</button>
                             </a>
-                            <form action="" method="post" onsubmit="return confirmarEliminacion()">
+                            <form action="{% url 'delprodcuto' producto.id_producto %}" method="post" onsubmit="return confirmarEliminacion()">
                                 {% csrf_token %}
                                 <button class="opt-producto-del-btn" type="submit">Eliminar</button>
                             </form>

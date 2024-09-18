@@ -28,3 +28,10 @@ def modproductos(request, producto_id):
     else:
         form = ProductoForm(instance=producto)
     return render(request, 'stock/modproductos.html', {'form': form, 'producto': producto})
+
+def delproductos(request, producto_id):
+    producto = get_object_or_404(Producto, id_producto=producto_id)
+    if request.method == 'POST':
+        producto.delete()
+        return redirect('productos')
+    return render(request, 'stock/delproducto.html', {'producto': producto})
