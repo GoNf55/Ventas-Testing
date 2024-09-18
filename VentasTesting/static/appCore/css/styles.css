@@ -171,3 +171,84 @@ td button{
 .clientes-addmod-form-sec__div form{
 
 }
+
+
+/* -------------- templates administracion de clientes ---------------- */
+/* --- principal ----------------------------*/
+.title-sec{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 16px;
+}
+.productos-sec{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Estilos de tabla productos */
+.div-productos{
+    margin: 20px;
+    border: solid 1px black;
+    width: 90%;
+    height: 50vh;
+    overflow-y: auto;
+    border-radius: 8px; 
+    background-color: #fff; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+.div-productos__table{
+    border: none;
+    width: 100%;
+    border-collapse: collapse;
+}
+.div-productos__table th,
+.div-productos__table td {
+    border: 1px solid #ddd; 
+    padding: 12px;
+    text-align: left; 
+}
+
+.div-productos__table th {
+    background-color: #f2f2f2; 
+    position: sticky; 
+    top: 0; 
+    z-index: 1;
+    font-weight: bold; 
+}
+
+.div-productos__table tr:nth-child(even) {
+    background-color: #f9f9f9; 
+}
+
+.div-productos__table tr:hover {
+    background-color: #f1f1f1; 
+}
+
+td button{
+    border-radius: 10px;
+    border: solid 1px black;
+    margin: 5px;
+    padding: 5px;
+    
+}
+.opts-producto-table{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.options-producto{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 90%;
+}
+.options-producto button{
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    width: 200px;
+}

@@ -1,0 +1,58 @@
+{% extends 'appCore/base.html' %}
+{% block title%} MGM - Administracion Productos {% endblock %}
+{% block content %}
+{% load crispy_forms_tags %}
+<section class="title-sec">
+    <h2>Administración de Productos</h2>
+</section>
+<section class="productos-sec">
+<!-- aca iria el listado de clientes-->
+    <div class="div-productos">
+        <table border="1" class="div-productos__table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripcion</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                    <th>Categoria</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for producto in productos_list %}
+                    <tr>
+                        <td>{{ producto.nombre }}</td>
+                        <td>{{ producto.descripcion }}</td>
+                        <td>{{ producto.cantidad }}</td>
+                        <td>{{ producto.precio }}</td>
+                        <td>{{ producto.categoria }}</td>
+                        <td class="opts-productos-table">
+                            <a href="{% url 'modproducto' producto.id_producto %}">
+                                <button>Modificar</button>
+                            </a>
+                            <form action="" method="post" onsubmit="return confirmarEliminacion()">
+                                {% csrf_token %}
+                                <button class="opt-producto-del-btn" type="submit">Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="options-productos">
+        <a href="{% url 'addproducto' %}">
+            <button>Agregar producto</button>
+        </a>
+        <a href="">
+            <button>Administración Categorias</button>
+        </a>
+    </div>
+</section>
+<script type="text/javascript">
+    function confirmarEliminacion() {
+        return confirm("¿Estás seguro de que deseas eliminar este cliente?");
+    }
+</script>
+{% endblock %}
