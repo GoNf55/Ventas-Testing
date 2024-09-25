@@ -1,0 +1,48 @@
+{% extends 'appCore/base.html' %}
+{% block title%} MGM - Administracion Categorias {% endblock %}
+{% block content %}
+{% load crispy_forms_tags %}
+<section class="title-sec">
+    <h2>Administración de Categorias de productos</h2>
+</section>
+<section class="categorias-sec">
+<!-- aca iria el listado de clientes-->
+    <div class="div-categorias">
+        <table border="1" class="div-categorias__table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripcion</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for categoria in listado_categorias %}
+                    <tr>
+                        <td>{{ categoria.nombre }}</td>
+                        <td>{{ categoria.descripcion }}</td>
+                        <td class="opts-categorias-table">
+                            <a href="{% url 'modcategorias' categoria.id_categoria %}">
+                                <button>Modificar</button>
+                            </a>
+                            <form action="{% url 'delcategorias' categoria.id_categoria %}" method="post" onsubmit="return confirmarEliminacion()">
+                                {% csrf_token %}
+                                <button class="opt-producto-del-btn" type="submit">Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="options-categorias">
+        <a href="{% url 'addcategorias' %}">
+            <button>Agregar categoria</button>
+        </a>
+    </div>
+</section>
+<script type="text/javascript">
+    function confirmarEliminacion() {
+        return confirm("¿Estás seguro de que deseas eliminar esta categoria?");
+    }
+</script>
+{% endblock %}

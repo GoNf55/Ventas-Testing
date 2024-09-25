@@ -1,19 +1,19 @@
 {% extends 'appCore/base.html' %}
-{% block title%} MGM - Modificar productos {% endblock %}
+{% block title%} MGM - Modificar Categorias {% endblock %}
 {% block content %}
 {% load crispy_forms_tags %}
 <section class="title-sec">
-    <h2>Modificar productos</h2>
+    <h2>Modificar categoria</h2>
 </section>
-<section class="clientes-addmod-form-sec">
-    <div class="clientes-addmod-form-sec__div">
-        <h3> Complete los datos del producto para modificar</h3>
+<section class="categorias-addmod-form-sec">
+    <div class="categorias-addmod-form-sec__div">
+        <h3> Complete los datos de la categoria para modificar</h3>
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
             <button type="submit">Guardar Cambios</button>
         </form>
-        <a href="{% url 'productos' %}">Cancelar</a>
+        <a href="{% url 'categorias' %}">Cancelar</a>
     </div>
 </section>
 {% endblock %}

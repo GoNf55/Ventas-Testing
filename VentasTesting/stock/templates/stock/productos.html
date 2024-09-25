@@ -45,14 +45,14 @@
         <a href="{% url 'addproducto' %}">
             <button>Agregar producto</button>
         </a>
-        <a href="">
+        <a href="{% url 'categorias' %}">
             <button>Administración Categorias</button>
         </a>
     </div>
 </section>
 <script type="text/javascript">
     function confirmarEliminacion() {
-        return confirm("¿Estás seguro de que deseas eliminar este cliente?");
+        return confirm("¿Estás seguro de que deseas eliminar este producto?");
     }
 </script>
 {% endblock %}
