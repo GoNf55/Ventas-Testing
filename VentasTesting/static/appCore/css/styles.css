@@ -98,95 +98,143 @@ body{
 
 /* -------------- templates administracion de clientes ---------------- */
 /* --- principal ----------------------------*/
-.title-sec{
+/* Sección de título */
+.title-sec {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 16px;
+    margin: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, #0071f3, #00aeff);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 28px;
+    font-weight: bold;
 }
-.clientes-sec{
+
+/* Sección Clientes */
+.clientes-sec {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px;
 }
 
-/*Estilos de tabla clientes */
-.div-clientes{
+/* Estilos de tabla clientes */
+.div-clientes {
     margin: 20px;
-    border: solid 1px black;
+    border: none;
     width: 90%;
     height: 50vh;
     overflow-y: auto;
-    border-radius: 8px; 
-    background-color: #fff; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
 }
-.div-clientes__table{
+
+.div-clientes__table {
     border: none;
     width: 100%;
     border-collapse: collapse;
+    font-size: 16px;
+    color: #333;
 }
+
 .div-clientes__table th,
 .div-clientes__table td {
-    border: 1px solid #ddd; 
-    padding: 12px;
-    text-align: left; 
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: left;
 }
 
 .div-clientes__table th {
-    background-color: #f2f2f2; 
-    position: sticky; 
-    top: 0; 
+    background-color: #0071f3;
+    color: white;
+    position: sticky;
+    top: 0;
     z-index: 1;
-    font-weight: bold; 
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .div-clientes__table tr:nth-child(even) {
-    background-color: #f9f9f9; 
+    background-color: #f9f9f9;
 }
 
 .div-clientes__table tr:hover {
-    background-color: #f1f1f1; 
+    background-color: #e6f7ff;
+    transition: background-color 0.3s ease;
 }
 
-td button{
+td button {
     border-radius: 10px;
-    border: solid 1px black;
-    margin: 5px;
-    padding: 5px;
-    
+    border: none;
+    background-color: #0071f3;
+    color: white;
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
-.opts-cliente-table{
+
+td button:hover {
+    background-color: #005bb5;
+}
+
+.opts-cliente-table {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.options-clientes{
+/* Opciones Clientes */
+.options-clientes {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     width: 90%;
+    margin: 20px 0;
 }
-.options-clientes button{
-    padding: 10px;
+
+.options-clientes button {
+    padding: 12px 20px;
     margin: 10px;
     border-radius: 10px;
+    background-color: #00aeff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     width: 200px;
+}
+
+.options-clientes button:hover {
+    background-color: #0071f3;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* --- add y mod clientes -------------- */
 /* Sección del título */
+
+/* Sección de título */
 .title-sec {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: linear-gradient(135deg, #0071f3, #00aeff);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .title-sec h2 {
-    font-size: 24px;
-    color: #333;
+    font-size: 28px;
+    color: white;
     font-weight: bold;
+    margin: 0;
 }
 
 /* Sección del formulario add y mod */
@@ -195,17 +243,92 @@ td button{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 40%;
+    margin: 0 auto;
 }
+
 .clientes-addmod-form-sec__div {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    max-width: 600px;
 }
-.clientes-addmod-form-sec__div form{
 
+.clientes-addmod-form-sec__div form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.clientes-addmod-form-sec__div form input,
+.clientes-addmod-form-sec__div form select,
+.clientes-addmod-form-sec__div form textarea {
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 100%;
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.05);
+}
 
-/* -------------- templates administracion de clientes ---------------- */
+.clientes-addmod-form-sec__div form input:focus,
+.clientes-addmod-form-sec__div form select:focus,
+.clientes-addmod-form-sec__div form textarea:focus {
+    border-color: #0071f3;
+    outline: none;
+    box-shadow: 0px 0px 8px rgba(0, 113, 243, 0.2);
+    transition: box-shadow 0.3s ease;
+}
+
+.clientes-addmod-form-sec__div form button {
+    padding: 12px 20px;
+    margin-top: 15px;
+    background-color: #0071f3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.clientes-addmod-form-sec__div form button:hover {
+    background-color: #005bb5;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.clientes-addmod-form-sec__div a{
+    padding: 12px 20px;
+    margin-top: 15px;
+    background-color: #b05b5b;
+    color: white;
+    border: none;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+    .clientes-addmod-form-sec__div a:hover{
+        background-color: #bc0101;  /* Rojo más oscuro */
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+   }    
+
+
+
+/* -------------- templates administracion de productos ---------------- */
 /* --- principal ----------------------------*/
 .title-sec{
     display: flex;
