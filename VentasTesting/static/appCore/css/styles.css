@@ -536,7 +536,6 @@ td button:hover {
 
 
 form textarea {
-    resize: none;
     height: 100px; /* Altura más pequeña para el campo descripción */
 }
 
@@ -569,7 +568,6 @@ form textarea {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    resize: none;
     font-size: 1rem;
     transition: border-color 0.3s;
 }
@@ -581,7 +579,6 @@ form select:focus,
 form textarea:focus {
     border-color: #007bff;
     outline: none;
-    resize: none;
 }
 
 form input[type="submit"] {
