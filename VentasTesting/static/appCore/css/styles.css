@@ -127,7 +127,6 @@ body{
     margin: 20px;
     border: none;
     width: 90%;
-    height: 50vh;
     overflow-y: auto;
     border-radius: 12px;
     background-color: #fff;
@@ -327,83 +326,358 @@ td button:hover {
    }    
 
 
-
+/*
 /* -------------- templates administracion de productos ---------------- */
 /* --- principal ----------------------------*/
-.title-sec{
+/* Sección de título */
+.title-sec {
+    text-align: center;
+    margin: 30px 16px;
+    padding: 20px;
+    background: linear-gradient(135deg, #0071f3, #00aeff);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.title-sec h2 {
+    font-size: 28px;
+    color: white;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Sección de productos */
+.productos-sec {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* Estilos de la tabla de productos */
+.div-productos {
+    margin: 20px 0;
+    border: solid 1px #ddd;
+    width: 90%;
+    overflow-y: auto;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.div-productos__table {
+    border: none;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+}
+
+.div-productos__table th,
+.div-productos__table td {
+    border: 1px solid #ddd;
+    padding: 5px;
+    text-align: left; /* Centra el texto horizontalmente */
+    vertical-align: middle;
+}
+
+.div-productos__table th {
+    background-color: #0071f3;
+    color: white;
+    position: sticky;
+    text-align: center; /* Centra el texto horizontalmente */
+    vertical-align: middle;
+    top: 0;
+    z-index: 1;
+    font-weight: bold;
+}
+
+.div-productos__table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.div-productos__table tr:hover {
+    background-color: #f1f1f1;
+}
+.div-productos__table tr {
+    height: auto; /* Asegura que la fila se ajuste al contenido */
+}
+
+/* Botones de opciones dentro de la tabla */
+td button {
+    border-radius: 10px;
+    border: solid 1px #0071f3;
+    margin: 3px;
+    padding:3px 7px;
+    background-color: #0071f3;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+td button:hover {
+    background-color: #005bb5;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Opciones de productos */
+.opts-producto-table {
+    display: flex;
+    flex-direction: row; /* Cambia 'column' a 'row' */
+    justify-content: center;
+    align-items: center;
+    gap: 8px; /* Espacio entre los botones */
+    width: auto; 
+}
+
+/* Botones dentro del contenedor */
+.opts-producto-table button {
+    padding: 8px 16px; /* Ajusta el tamaño del botón */
+    margin: 0; /* Elimina márgenes adicionales */
+    width: auto; /* Asegura que los botones se ajusten al contenido */
+}
+
+/* Estilos de la barra de opciones de productos */
+.opts-productos-table {
+    display: flex; /* Aplica Flexbox */
+    flex-direction: row; /* Coloca los elementos en fila */
+    justify-content: center; /* Centra los botones horizontalmente */
+    align-items: center; /* Centra los botones verticalmente */
+    gap: 10px; /* Espacio entre los botones */
+}
+
+.opts-productos-table button {
+    padding:4px 10px; /* Tamaño de los botones */
+    margin: 0; /* Elimina márgenes adicionales */
+    width: auto; /* Ajusta el ancho al contenido */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    background-color: #0071f3; /* Color de fondo */
+    color: #fff; /* Color del texto */
+    border: none; /* Elimina borde */
+    border-radius: 8px; /* Bordes redondeados */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.opts-productos-table button:hover {
+    background-color: #005bb5; /* Color más oscuro al hacer hover */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más fuerte */
+}
+
+.opts-productos-table button:active {
+    background-color: #003f82; /* Color más oscuro al hacer clic */
+}
+
+.options-producto button:hover {
+    background-color: #005bb5;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenedor de los botones de opciones de productos */
+.options-productos {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente los botones */
+    align-items: center;
+    gap: 20px; /* Espacio entre botones */
+    margin: 20px 0; /* Espacio superior e inferior */
+}
+
+/* Botones dentro de los enlaces */
+.options-productos a {
+    text-decoration: none; /* Quita el subrayado del enlace */
+}
+
+.options-productos button {
+    padding: 12px 24px; /* Tamaño del botón */
+    background-color: #0071f3; /* Color de fondo azul */
+    color: #fff; /* Texto blanco */
+    border: none; /* Sin bordes */
+    border-radius: 8px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente */
+    cursor: pointer; /* Cursor tipo mano al pasar sobre el botón */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.options-productos button:hover {
+    background-color: #005bb5; /* Color más oscuro al hacer hover */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más fuerte */
+}
+
+.options-productos button:active {
+    background-color: #003f82; /* Color aún más oscuro al hacer clic */
+}
+
+
+/* Sección del título */
+.title-sec {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 16px;
 }
-.productos-sec{
+
+.title-sec h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+/* Sección de formulario de productos */
+.productos-addmod-form-sec__div {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 20px auto; /* Centrar el formulario */
+    width: 60%; /* Ancho del formulario */
+    background-color: #fff; /* Fondo blanco */
+    padding: 20px; /* Espacio interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
 }
 
-/*Estilos de tabla productos */
-.div-productos{
-    margin: 20px;
-    border: solid 1px black;
-    width: 90%;
-    height: 50vh;
-    overflow-y: auto;
-    border-radius: 8px; 
-    background-color: #fff; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+/* Estilos para el subtítulo */
+.productos-addmod-form-sec__div h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
 }
-.div-productos__table{
-    border: none;
+
+/* Estilos para el formulario */
+.productos-addmod-form-sec__div form {
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    border-collapse: collapse;
 }
-.div-productos__table th,
-.div-productos__table td {
-    border: 1px solid #ddd; 
+
+.productos-addmod-form-sec__div form .form-group {
+    margin-bottom: 15px; /* Espacio entre campos */
+}
+
+.productos-addmod-form-sec__div form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #0071f3;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 150px;
+    align-self: center; /* Centrar el botón */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.productos-addmod-form-sec__div form button:hover {
+    background-color: #005bb5;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.productos-addmod-form-sec__div form button:active {
+    background-color: #003f82;
+}
+
+/* Estilo del enlace de Cancelar */
+.productos-addmod-form-sec__div a {
+    text-decoration: none; /* Elimina subrayado */
+    color: #0071f3;
+    font-size: 16px;
+    margin-top: 15px;
+    display: inline-block;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.productos-addmod-form-sec__div a:hover {
+    background-color: #e6f1ff; /* Fondo más claro en hover */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.productos-addmod-form-sec__div a:active {
+    background-color: #cce4ff;
+}
+
+.productos {
+    background-color: #f9f9f9;
+    border-radius: 8px;
     padding: 12px;
-    text-align: left; 
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.div-productos__table th {
-    background-color: #f2f2f2; 
-    position: sticky; 
-    top: 0; 
-    z-index: 1;
-    font-weight: bold; 
+form textarea {
+    height: 100px; /* Altura más pequeña para el campo descripción */
 }
 
-.div-productos__table tr:nth-child(even) {
-    background-color: #f9f9f9; 
-}
 
-.div-productos__table tr:hover {
-    background-color: #f1f1f1; 
-}
-
-td button{
-    border-radius: 10px;
-    border: solid 1px black;
-    margin: 5px;
-    padding: 5px;
-    
-}
-.opts-producto-table{
+.productos-addmod-form-sec__div {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.options-producto{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 90%;
+h3 {
+    font-size: 1.5rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
 }
-.options-producto button{
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form p {
+    margin: 0;
+    padding: 0;
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form select,
+form textarea {
+    width: 100%;
     padding: 10px;
-    margin: 10px;
-    border-radius: 10px;
-    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: border-color 0.3s;
 }
+
+form input[type="text"]:focus,
+form input[type="number"]:focus,
+form input[type="email"]:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+form input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
