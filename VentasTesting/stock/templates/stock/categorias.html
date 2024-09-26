@@ -5,14 +5,15 @@
 <section class="title-sec">
     <h2>Administración de Categorias de productos</h2>
 </section>
-<section class="categorias-sec">
+<section class="productos-sec">
 <!-- aca iria el listado de clientes-->
-    <div class="div-categorias">
-        <table border="1" class="div-categorias__table">
+    <div class="div-productos">
+        <table border="1" class="div-productos__table">
             <thead>
                 <tr>
                     <th>Nombre</th>
                     <th>Descripcion</th>
+                    <th>Opciones</th>
                 </tr>
             </thead>
             <tbody>
@@ -20,7 +21,7 @@
                     <tr>
                         <td>{{ categoria.nombre }}</td>
                         <td>{{ categoria.descripcion }}</td>
-                        <td class="opts-categorias-table">
+                        <td class="opts-productos-table">
                             <a href="{% url 'modcategorias' categoria.id_categoria %}">
                                 <button>Modificar</button>
                             </a>
@@ -34,7 +35,7 @@
             </tbody>
         </table>
     </div>
-    <div class="options-categorias">
+    <div class="options-productos">
         <a href="{% url 'addcategorias' %}">
             <button>Agregar categoria</button>
         </a>

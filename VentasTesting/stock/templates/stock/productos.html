@@ -31,7 +31,7 @@
                             <a href="{% url 'modproducto' producto.id_producto %}">
                                 <button>Modificar</button>
                             </a>
-                            <form action="{% url 'delprodcuto' producto.id_producto %}" method="post" onsubmit="return confirmarEliminacion()">
+                            <form action="{% url 'delproducto' producto.id_producto %}" method="post" onsubmit="return confirmarEliminacion()">
                                 {% csrf_token %}
                                 <button class="opt-producto-del-btn" type="submit">Eliminar</button>
                             </form>
@@ -43,10 +43,10 @@
     </div>
     <div class="options-productos">
         <a href="{% url 'addproducto' %}">
-            <button>Agregar producto</button>
+            <button>Agregar Producto</button>
         </a>
         <a href="{% url 'categorias' %}">
-            <button>Administración Categorias</button>
+            <button>Administrar Categorias</button>
         </a>
     </div>
 </section>

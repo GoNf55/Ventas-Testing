@@ -305,26 +305,25 @@ td button:hover {
 }
 
 .clientes-addmod-form-sec__div a{
-    padding: 12px 20px;
-    margin-top: 15px;
-    background-color: #b05b5b;
-    color: white;
-    border: none;
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    border-radius: 8px;
+    text-decoration: none; /* Elimina subrayado */
+    color: #0071f3;
     font-size: 16px;
-    cursor: pointer;
+    margin-top: 15px;
+    display: inline-block;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 8px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
     .clientes-addmod-form-sec__div a:hover{
-        background-color: #bc0101;  /* Rojo más oscuro */
-        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        background-color: #e6f1ff; /* Fondo más claro en hover */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
    }    
 
+
+.clientes-addmod-form-sec__div a:active {
+    background-color: #cce4ff;
+}
 
 /*
 /* -------------- templates administracion de productos ---------------- */
@@ -526,19 +525,6 @@ td button:hover {
     text-align: center;
 }
 
-/* Sección de formulario de productos */
-.productos-addmod-form-sec__div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 20px auto; /* Centrar el formulario */
-    width: 60%; /* Ancho del formulario */
-    background-color: #fff; /* Fondo blanco */
-    padding: 20px; /* Espacio interno */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
-}
 
 /* Estilos para el subtítulo */
 .productos-addmod-form-sec__div h3 {
@@ -548,82 +534,12 @@ td button:hover {
     text-align: center;
 }
 
-/* Estilos para el formulario */
-.productos-addmod-form-sec__div form {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-.productos-addmod-form-sec__div form .form-group {
-    margin-bottom: 15px; /* Espacio entre campos */
-}
-
-.productos-addmod-form-sec__div form button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #0071f3;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top: 20px;
-    width: 150px;
-    align-self: center; /* Centrar el botón */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.productos-addmod-form-sec__div form button:hover {
-    background-color: #005bb5;
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.productos-addmod-form-sec__div form button:active {
-    background-color: #003f82;
-}
-
-/* Estilo del enlace de Cancelar */
-.productos-addmod-form-sec__div a {
-    text-decoration: none; /* Elimina subrayado */
-    color: #0071f3;
-    font-size: 16px;
-    margin-top: 15px;
-    display: inline-block;
-    text-align: center;
-    padding: 10px 20px;
-    border-radius: 8px;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.productos-addmod-form-sec__div a:hover {
-    background-color: #e6f1ff; /* Fondo más claro en hover */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.productos-addmod-form-sec__div a:active {
-    background-color: #cce4ff;
-}
-
-.productos {
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    padding: 12px;
-    max-width: 600px;
-    margin: 0 auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
 
 form textarea {
+    resize: none;
     height: 100px; /* Altura más pequeña para el campo descripción */
 }
 
-
-.productos-addmod-form-sec__div {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
 
 h3 {
     font-size: 1.5rem;
@@ -653,6 +569,7 @@ form textarea {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    resize: none;
     font-size: 1rem;
     transition: border-color 0.3s;
 }
@@ -664,6 +581,7 @@ form select:focus,
 form textarea:focus {
     border-color: #007bff;
     outline: none;
+    resize: none;
 }
 
 form input[type="submit"] {
