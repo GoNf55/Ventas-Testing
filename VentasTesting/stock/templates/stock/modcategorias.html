@@ -1,13 +1,13 @@
 {% extends 'appCore/base.html' %}
-{% block title%} MGM - Modificar Categorias {% endblock %}
+{% block title%} MGM - Modificar Categorías {% endblock %}
 {% block content %}
 {% load crispy_forms_tags %}
 <section class="title-sec">
-    <h2>Modificar categoria</h2>
+    <h2>Modificar categoría</h2>
 </section>
-<section class="clientes-addmod-form-sec">
-    <div class="clientes-addmod-form-sec__div">
-        <h3> Complete los datos de la categoria para modificar</h3>
+<section class="addmod-form-sec">
+    <div class="addmod-form-sec__div">
+        <h3> Complete los datos de la categoría para modificar</h3>
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}

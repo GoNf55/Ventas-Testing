@@ -44,6 +44,8 @@ body{
     margin: 0px 30px;
     font-size: 36px;
     font-weight: bold;
+    width: 33%;
+    text-align: center;
 }
 
 .date-user-div {
@@ -51,6 +53,7 @@ body{
     margin: 0px 30px;
     font-size: 18px;
     font-weight: 300;
+    width: 33%;
 }
 
 /* Sección de Opciones */
@@ -96,132 +99,14 @@ body{
 }
 
 
-/* -------------- templates administracion de clientes ---------------- */
-/* --- principal ----------------------------*/
-/* Sección de título */
+/* -------------- TEMPLATES ADMINISTRACION  ---------------- */
+/* Sección de título comun a todos los templates */
 .title-sec {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px;
-    padding: 20px;
-    background: linear-gradient(135deg, #0071f3, #00aeff);
-    color: white;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    font-size: 28px;
-    font-weight: bold;
-}
-
-/* Sección Clientes */
-.clientes-sec {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-/* Estilos de tabla clientes */
-.div-clientes {
-    margin: 20px;
-    border: none;
-    width: 90%;
-    overflow-y: auto;
-    border-radius: 12px;
-    background-color: #fff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-}
-
-.div-clientes__table {
-    border: none;
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 16px;
-    color: #333;
-}
-
-.div-clientes__table th,
-.div-clientes__table td {
-    border: 1px solid #ddd;
-    padding: 15px;
-    text-align: left;
-}
-
-.div-clientes__table th {
-    background-color: #0071f3;
-    color: white;
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-.div-clientes__table tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-.div-clientes__table tr:hover {
-    background-color: #e6f7ff;
-    transition: background-color 0.3s ease;
-}
-
-td button {
-    border-radius: 10px;
-    border: none;
-    background-color: #0071f3;
-    color: white;
-    padding: 8px 12px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-td button:hover {
-    background-color: #005bb5;
-}
-
-.opts-cliente-table {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Opciones Clientes */
-.options-clientes {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 90%;
-    margin: 20px 0;
-}
-
-.options-clientes button {
-    padding: 12px 20px;
-    margin: 10px;
-    border-radius: 10px;
-    background-color: #00aeff;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    width: 200px;
-}
-
-.options-clientes button:hover {
-    background-color: #0071f3;
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* --- add y mod clientes -------------- */
-/* Sección del título */
-
-/* Sección de título */
-.title-sec {
     text-align: center;
-    margin-bottom: 30px;
+    margin: 10px 20px;
     padding: 20px;
     background: linear-gradient(135deg, #0071f3, #00aeff);
     color: white;
@@ -234,120 +119,10 @@ td button:hover {
     color: white;
     font-weight: bold;
     margin: 0;
-}
-
-/* Sección del formulario add y mod */
-.clientes-addmod-form-sec {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 12px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    width: 40%;
-    margin: 0 auto;
-}
-
-.clientes-addmod-form-sec__div {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 600px;
-}
-
-.clientes-addmod-form-sec__div form {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.clientes-addmod-form-sec__div form input,
-.clientes-addmod-form-sec__div form select,
-.clientes-addmod-form-sec__div form textarea {
-    margin-bottom: 15px;
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-    width: 100%;
-    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.clientes-addmod-form-sec__div form input:focus,
-.clientes-addmod-form-sec__div form select:focus,
-.clientes-addmod-form-sec__div form textarea:focus {
-    border-color: #0071f3;
-    outline: none;
-    box-shadow: 0px 0px 8px rgba(0, 113, 243, 0.2);
-    transition: box-shadow 0.3s ease;
-}
-
-.clientes-addmod-form-sec__div form button {
-    padding: 12px 20px;
-    margin-top: 15px;
-    background-color: #0071f3;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.clientes-addmod-form-sec__div form button:hover {
-    background-color: #005bb5;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.clientes-addmod-form-sec__div a{
-    text-decoration: none; /* Elimina subrayado */
-    color: #0071f3;
-    font-size: 16px;
-    margin-top: 15px;
-    display: inline-block;
     text-align: center;
-    padding: 10px 20px;
-    border-radius: 8px;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
-    .clientes-addmod-form-sec__div a:hover{
-        background-color: #e6f1ff; /* Fondo más claro en hover */
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-   }    
-
-
-.clientes-addmod-form-sec__div a:active {
-    background-color: #cce4ff;
-}
-
-/*
-/* -------------- templates administracion de productos ---------------- */
-/* --- principal ----------------------------*/
-/* Sección de título */
-.title-sec {
-    text-align: center;
-    margin: 30px 16px;
-    padding: 20px;
-    background: linear-gradient(135deg, #0071f3, #00aeff);
-    color: white;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.title-sec h2 {
-    font-size: 28px;
-    color: white;
-    font-weight: bold;
-    margin: 0;
-}
-
-/* Sección de productos */
-.productos-sec {
+/* --- Sección principal de adminsitracion --- */
+.main-sec {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -356,33 +131,33 @@ td button:hover {
     width: 100%;
 }
 
-/* Estilos de la tabla de productos */
-.div-productos {
-    margin: 20px 0;
+/* Estilos de la tabla */
+.main-sec__div {
     border: solid 1px #ddd;
     width: 90%;
+    height: 57vh;
     overflow-y: auto;
     border-radius: 12px;
     background-color: #fff;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.div-productos__table {
+.main-sec_div__table {
     border: none;
     width: 100%;
     border-collapse: collapse;
     font-size: 16px;
 }
 
-.div-productos__table th,
-.div-productos__table td {
+.main-sec_div__table th,
+.main-sec_div__table td {
     border: 1px solid #ddd;
     padding: 5px;
     text-align: left; /* Centra el texto horizontalmente */
     vertical-align: middle;
 }
 
-.div-productos__table th {
+.main-sec_div__table th {
     background-color: #0071f3;
     color: white;
     position: sticky;
@@ -393,14 +168,14 @@ td button:hover {
     font-weight: bold;
 }
 
-.div-productos__table tr:nth-child(even) {
+.main-sec_div__table tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-.div-productos__table tr:hover {
+.main-sec_div__table tr:hover {
     background-color: #f1f1f1;
 }
-.div-productos__table tr {
+.main-sec_div__table tr {
     height: auto; /* Asegura que la fila se ajuste al contenido */
 }
 
@@ -421,8 +196,8 @@ td button:hover {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Opciones de productos */
-.opts-producto-table {
+/* Opciones */
+.opts-table {
     display: flex;
     flex-direction: row; /* Cambia 'column' a 'row' */
     justify-content: center;
@@ -432,14 +207,14 @@ td button:hover {
 }
 
 /* Botones dentro del contenedor */
-.opts-producto-table button {
+.opts-table button {
     padding: 8px 16px; /* Ajusta el tamaño del botón */
     margin: 0; /* Elimina márgenes adicionales */
     width: auto; /* Asegura que los botones se ajusten al contenido */
 }
 
-/* Estilos de la barra de opciones de productos */
-.opts-productos-table {
+/* Estilos de la barra de opciones */
+.opts-table {
     display: flex; /* Aplica Flexbox */
     flex-direction: row; /* Coloca los elementos en fila */
     justify-content: center; /* Centra los botones horizontalmente */
@@ -447,35 +222,49 @@ td button:hover {
     gap: 10px; /* Espacio entre los botones */
 }
 
-.opts-productos-table button {
+.opts-table button {
+    color: black;
     padding:4px 10px; /* Tamaño de los botones */
     margin: 0; /* Elimina márgenes adicionales */
     width: auto; /* Ajusta el ancho al contenido */
     cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
-    background-color: #0071f3; /* Color de fondo */
-    color: #fff; /* Color del texto */
     border: none; /* Elimina borde */
     border-radius: 8px; /* Bordes redondeados */
     transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
-
-.opts-productos-table button:hover {
-    background-color: #005bb5; /* Color más oscuro al hacer hover */
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más fuerte */
+.opts-table button:hover{
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); /* Sombra más fuerte */
 }
 
-.opts-productos-table button:active {
+.mod-button {
+    background-color: #fff36a;
+}
+
+.del-button{
+    background-color: #ff7878;
+}
+
+.mod-button:hover {
+    background-color: #ffed27;
+}
+
+.del-button:hover{
+    background-color: #fd2929;
+}
+
+.opts-table button:active {
     background-color: #003f82; /* Color más oscuro al hacer clic */
 }
 
-.options-producto button:hover {
+.options button:hover {
     background-color: #005bb5;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Contenedor de los botones de opciones de productos */
-.options-productos {
+
+/* Contenedor de los botones de opciones */
+.options {
     display: flex;
     justify-content: center; /* Centra horizontalmente los botones */
     align-items: center;
@@ -484,11 +273,11 @@ td button:hover {
 }
 
 /* Botones dentro de los enlaces */
-.options-productos a {
+.options a {
     text-decoration: none; /* Quita el subrayado del enlace */
 }
 
-.options-productos button {
+.options button {
     padding: 12px 24px; /* Tamaño del botón */
     background-color: #0071f3; /* Color de fondo azul */
     color: #fff; /* Texto blanco */
@@ -500,40 +289,107 @@ td button:hover {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
 
-.options-productos button:hover {
+.options button:hover {
     background-color: #005bb5; /* Color más oscuro al hacer hover */
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más fuerte */
 }
 
-.options-productos button:active {
+.options button:active {
     background-color: #003f82; /* Color aún más oscuro al hacer clic */
 }
 
+/* ------- Seccion add y mod (templates registrar y modificar) ----------- */
 
-/* Sección del título */
-.title-sec {
+/* Sección del formulario add y mod */
+.addmod-form-sec {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 16px;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 40%;
+    margin: 0 auto;
 }
 
-.title-sec h2 {
-    font-size: 28px;
-    font-weight: bold;
-    color: #333;
+.addmod-form-sec__div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+}
+
+.addmod-form-sec__div form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.addmod-form-sec__div form input,
+.addmod-form-sec__div form select,
+.addmod-form-sec__div form textarea {
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 100%;
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.addmod-form-sec__div form input:focus,
+.addmod-form-sec__div form select:focus,
+.addmod-form-sec__div form textarea:focus {
+    border-color: #0071f3;
+    outline: none;
+    box-shadow: 0px 0px 8px rgba(0, 113, 243, 0.2);
+    transition: box-shadow 0.3s ease;
+}
+
+.addmod-form-sec__div form button {
+    padding: 12px 20px;
+    margin-top: 15px;
+    background-color: #0071f3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.addmod-form-sec__div form button:hover {
+    background-color: #005bb5;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.addmod-form-sec__div a{
+    text-decoration: none; /* Elimina subrayado */
+    color: #0071f3;
+    font-size: 16px;
+    margin-top: 15px;
+    display: inline-block;
     text-align: center;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.addmod-form-sec__div a:hover{
+        background-color: #e6f1ff; /* Fondo más claro en hover */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+   }    
+
+
+.addmod-form-sec__div a:active {
+    background-color: #cce4ff;
 }
 
-
-/* Estilos para el subtítulo */
-.productos-addmod-form-sec__div h3 {
-    font-size: 20px;
-    margin-bottom: 20px;
-    color: #333;
-    text-align: center;
-}
-
+/* propiedades genericas para todos los formularios */
 
 form textarea {
     height: 100px; /* Altura más pequeña para el campo descripción */

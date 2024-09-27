@@ -5,14 +5,13 @@
 <section class="title-sec">
     <h2>Administración de Categorias de productos</h2>
 </section>
-<section class="productos-sec">
-<!-- aca iria el listado de clientes-->
-    <div class="div-productos">
-        <table border="1" class="div-productos__table">
+<section class="main-sec">
+    <div class="main-sec__div">
+        <table border="1" class="main-sec_div__table">
             <thead>
                 <tr>
                     <th>Nombre</th>
-                    <th>Descripcion</th>
+                    <th>Descripción</th>
                     <th>Opciones</th>
                 </tr>
             </thead>
@@ -21,13 +20,13 @@
                     <tr>
                         <td>{{ categoria.nombre }}</td>
                         <td>{{ categoria.descripcion }}</td>
-                        <td class="opts-productos-table">
+                        <td class="opts-table">
                             <a href="{% url 'modcategorias' categoria.id_categoria %}">
-                                <button>Modificar</button>
+                                <button class="mod-button" >Modificar</button>
                             </a>
                             <form action="{% url 'delcategorias' categoria.id_categoria %}" method="post" onsubmit="return confirmarEliminacion()">
                                 {% csrf_token %}
-                                <button class="opt-producto-del-btn" type="submit">Eliminar</button>
+                                <button class="del-button" type="submit">Eliminar</button>
                             </form>
                         </td>
                     </tr>
@@ -35,9 +34,12 @@
             </tbody>
         </table>
     </div>
-    <div class="options-productos">
+    <div class="options">
         <a href="{% url 'addcategorias' %}">
             <button>Agregar categoria</button>
+        </a>
+        <a href="{% url 'productos' %}">
+            <button>Volver</button>
         </a>
     </div>
 </section>
