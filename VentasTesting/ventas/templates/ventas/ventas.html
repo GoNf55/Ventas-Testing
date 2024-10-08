@@ -1,0 +1,59 @@
+{% extends 'appCore/base.html' %}
+{% block title%} MGM - Gestion de Ventas {% endblock %}
+{% block content %}
+{% load crispy_forms_tags %}
+<section class="title-sec">
+    <h2>Gestion de ventas</h2>
+</section>
+<section class="main-sec">
+<!-- aca iria el listado de clientes-->
+    <div class="main-sec__div">
+        <table border="1" class="main-sec_div__table">
+            <thead>
+                <tr>
+                    <th>Número</th>
+                    <th>Cliente</th>
+                    <th>Fecha</th>
+                    <th>Total</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for venta in ventas_list %}
+                    <tr>
+                        <td>{{ venta.id_venta }}</td>
+                        <td>{{ venta.cliente.nombre }} {{ venta.cliente.apellido }}</td>
+                        <td>{{ venta.fecha_venta }}</td>
+                        <td>{{ venta.total_venta }}</td>
+                        <td class="opts-table">
+                            <a href="{% url 'conscliente' cliente.id_cliente %}"> 
+                                <button class="mod-button">Consultar</button>
+                            </a>
+                            <form action="{% url 'delcliente' cliente.id_cliente %}" method="post" onsubmit="return confirmarEliminacion()">
+                                {% csrf_token %}
+                                <button class="del-button" type="submit">Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="options">
+        <a href="{% url 'addcliente' %}">
+            <button>Registrar Nueva Venta</button>
+        </a>
+        <a href="{% url 'addcliente' %}">
+            <button>Estadisiticas de ventas</button>
+        </a>
+        <a href="{% url 'home' %}">
+            <button>Volver</button>
+        </a>
+    </div>
+</section>
+<script type="text/javascript">
+    function confirmarEliminacion() {
+        return confirm("¿Estás seguro de que deseas eliminar este cliente?");
+    }
+</script>
+{% endblock %}
