@@ -6,7 +6,6 @@
     <h2>Gestion de ventas</h2>
 </section>
 <section class="main-sec">
-<!-- aca iria el listado de clientes-->
     <div class="main-sec__div">
         <table border="1" class="main-sec_div__table">
             <thead>
@@ -26,10 +25,10 @@
                         <td>{{ venta.fecha_venta }}</td>
                         <td>{{ venta.total_venta }}</td>
                         <td class="opts-table">
-                            <a href="{% url 'conscliente' cliente.id_cliente %}"> 
+                            <a href="{% url 'consventa'  %}"> <!-- cliente.id_cliente-->
                                 <button class="mod-button">Consultar</button>
                             </a>
-                            <form action="{% url 'delcliente' cliente.id_cliente %}" method="post" onsubmit="return confirmarEliminacion()">
+                            <form action="" method="post" onsubmit="return confirmarEliminacion()"> <!-- {% url 'delcliente' cliente.id_cliente %} -->
                                 {% csrf_token %}
                                 <button class="del-button" type="submit">Eliminar</button>
                             </form>
@@ -40,10 +39,10 @@
         </table>
     </div>
     <div class="options">
-        <a href="{% url 'addcliente' %}">
+        <a href="{% url 'addventa' %}">
             <button>Registrar Nueva Venta</button>
         </a>
-        <a href="{% url 'addcliente' %}">
+        <a href=""> <!-- % url 'estventas' % -->
             <button>Estadisiticas de ventas</button>
         </a>
         <a href="{% url 'home' %}">
