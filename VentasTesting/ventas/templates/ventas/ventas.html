@@ -25,10 +25,10 @@
                         <td>{{ venta.fecha_venta }}</td>
                         <td>{{ venta.total_venta }}</td>
                         <td class="opts-table">
-                            <a href="{% url 'consventa'  %}"> <!-- cliente.id_cliente-->
+                            <a href="{% url 'consventa'  %}"> 
                                 <button class="mod-button">Consultar</button>
                             </a>
-                            <form action="" method="post" onsubmit="return confirmarEliminacion()"> <!-- {% url 'delcliente' cliente.id_cliente %} -->
+                            <form action="" method="post" onsubmit="return confirmarEliminacion()"> 
                                 {% csrf_token %}
                                 <button class="del-button" type="submit">Eliminar</button>
                             </form>
@@ -42,7 +42,7 @@
         <a href="{% url 'addventa' %}">
             <button>Registrar Nueva Venta</button>
         </a>
-        <a href=""> <!-- % url 'estventas' % -->
+        <a href=""> 
             <button>Estadisiticas de ventas</button>
         </a>
         <a href="{% url 'home' %}">
