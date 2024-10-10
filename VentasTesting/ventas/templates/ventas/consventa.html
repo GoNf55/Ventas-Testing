@@ -1,0 +1,25 @@
+{% extends 'appCore/base.html' %}
+{% block title%} MGM - Consultar venta {% endblock %}
+{% block content %}
+{% load crispy_forms_tags %}
+<section class="title-sec">
+    <h2>Detalle de Venta</h2>
+</section>
+<section class="addmod-form-sec">
+    <div class="addmod-form-sec__div">
+        <p>Número de Venta: {{ venta.id_venta }}</p>
+        <p>Fecha: {{venta.fecha_venta}}</p>
+        <p>Cliente: {{venta.cliente.nombre}} {{venta.cliente.apellido}}</p>
+        <hr>
+        <p>Items:</p>
+        <ul>
+        {% for item in lista_detalles %}
+        <li>{{ item.producto.nombre }} [ {{ item.producto.categoria.nombre}} ] x {{item.cantidad}} - subtotal: ${{ item.subtotal }}</li>
+        {% endfor %}
+        </ul>
+        <hr>
+        <p>Total: ${{venta.total_venta}}</p>
+        <a href="{% url 'ventas' %}">Volver</a>
+    </div>
+</section>
+{% endblock %}

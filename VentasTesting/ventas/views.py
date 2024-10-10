@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Venta
 
 # Create your views here.
@@ -10,5 +10,7 @@ def ventas(request):
 def add_venta(request):
      return render(request, 'ventas/addventa.html')
 
-def cons_venta(request):
-     return render(request, 'ventas/consventa.html')
+def cons_venta(request ,venta_id):
+     venta = get_object_or_404(Venta, id_venta=venta_id)
+     detalles = venta.detalleVenta.all()  # Obtener todos los DetalleVenta asociados
+     return render(request, 'ventas/consventa.html', {'venta': venta, 'lista_detalles' : detalles})

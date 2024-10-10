@@ -25,7 +25,7 @@
                         <td>{{ venta.fecha_venta }}</td>
                         <td>{{ venta.total_venta }}</td>
                         <td class="opts-table">
-                            <a href="{% url 'consventa'  %}"> 
+                            <a href="{% url 'consventa' venta.id_venta  %}"> 
                                 <button class="mod-button">Consultar</button>
                             </a>
                             <form action="" method="post" onsubmit="return confirmarEliminacion()"> 
