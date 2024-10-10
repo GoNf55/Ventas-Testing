@@ -19,6 +19,7 @@ class Venta (models.Model):
     fecha_venta = models.DateField()
     total_venta = models.DecimalField(max_digits=10, decimal_places=2)
     cliente = models.ForeignKey(Cliente, on_delete=models.PROTECT)
+    eliminado = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.id_venta} - {self.cliente.nombre} - {self.fecha_venta}"

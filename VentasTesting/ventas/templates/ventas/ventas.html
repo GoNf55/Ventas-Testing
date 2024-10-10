@@ -28,7 +28,7 @@
                             <a href="{% url 'consventa' venta.id_venta  %}"> 
                                 <button class="mod-button">Consultar</button>
                             </a>
-                            <form action="" method="post" onsubmit="return confirmarEliminacion()"> 
+                            <form action="{% url 'delventa' venta.id_venta  %}" method="post" onsubmit="return confirmarEliminacion()"> 
                                 {% csrf_token %}
                                 <button class="del-button" type="submit">Eliminar</button>
                             </form>
@@ -52,7 +52,7 @@
 </section>
 <script type="text/javascript">
     function confirmarEliminacion() {
-        return confirm("¿Estás seguro de que deseas eliminar este cliente?");
+        return confirm("¿Estás seguro de que deseas eliminar esta venta?");
     }
 </script>
 {% endblock %}
