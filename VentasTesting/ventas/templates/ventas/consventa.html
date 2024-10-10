@@ -2,11 +2,11 @@
 {% block title%} MGM - Consultar venta {% endblock %}
 {% block content %}
 {% load crispy_forms_tags %}
-<section class="title-sec">
+<section class="titulo">
     <h2>Detalle de Venta</h2>
 </section>
-<section class="addmod-form-sec">
-    <div class="addmod-form-sec__div">
+<section class="agregar">
+    <div class="agregar__div">
         <p>Número de Venta: {{ venta.id_venta }}</p>
         <p>Fecha: {{venta.fecha_venta}}</p>
         <p>Cliente: {{venta.cliente.nombre}} {{venta.cliente.apellido}}</p>

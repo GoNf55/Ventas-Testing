@@ -351,7 +351,7 @@ td button:hover {
     align-items: center;
     flex-direction: column;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: rgba(255, 255, 255, 0.19);
     border-radius: 12px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     width: 40%;
@@ -369,7 +369,7 @@ td button:hover {
     display: flex;
     flex-direction: column;
     padding: 20px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.213);
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -412,8 +412,8 @@ td button:hover {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.addmod-form-sec__div a{
-    text-decoration: none; /* Elimina subrayado */
+.addmod-form-sec__div a {
+    text-decoration: none;
     color: #0071f3;
     font-size: 16px;
     margin-top: 15px;
@@ -423,15 +423,16 @@ td button:hover {
     border-radius: 8px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
-.addmod-form-sec__div a:hover{
-        background-color: #e6f1ff; /* Fondo más claro en hover */
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-   }    
 
+.addmod-form-sec__div a:hover {
+    background-color: #e6f1ff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
 
 .addmod-form-sec__div a:active {
     background-color: #cce4ff;
 }
+
 
 /* propiedades genericas para todos los formularios */
 
@@ -496,3 +497,76 @@ form input[type="submit"]:hover {
     background-color: #0056b3;
 }
 
+
+.titulo {
+    background-color: rgba(0, 113, 243, 0.9); 
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.titulo h2 {
+    font-size: 28px;
+    text-align: center;
+    margin: 0;
+}
+
+
+.agregar {
+    background-color: rgba(255, 255, 255, 0.237); 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.agregar__div {
+    padding: 20px;
+}
+
+.agregar__div p {
+    margin: 5px 0;
+}
+
+.agregar__div hr {
+    border: 0.5px solid #ccc;
+    margin: 10px 0;
+}
+
+.agregar__div ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+.agregar__div ul li {
+    margin-bottom: 10px;
+}
+
+.agregar__div .subtotal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.agregar__div .subtotal p {
+    margin: 5px 0;
+}
+
+.agregar__div a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0071f3;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.agregar__div a:hover {
+    background-color: #005bb5;
+}
