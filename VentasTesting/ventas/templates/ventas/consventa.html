@@ -8,7 +8,7 @@
 <section class="agregar">
     <div class="agregar__div">
         <p>Número de Venta: {{ venta.id_venta }}</p>
-        <p>Fecha: {{venta.fecha_venta}}</p>
+        <p>Fecha: {{ venta.fecha_venta|date:"d/m/Y" }}</p>
         <p>Cliente: {{venta.cliente.nombre}} {{venta.cliente.apellido}}</p>
         <hr>
         <p>Items:</p>
