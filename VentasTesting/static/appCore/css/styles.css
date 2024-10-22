@@ -1,14 +1,14 @@
 .navbar {
     border-bottom: none; 
+    background-color:rgba(255, 255, 255, 0.745);
     margin-bottom: 0;    
     padding-bottom: 0;   
 }
 
 body{
     background-image: url('./background.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    background-size:cover;
+    background-position:center;
     font-family: Arial, sans-serif;
     color: #333;
     height: 100vh;
@@ -77,7 +77,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(135deg, #0071f3, #00aeff);
+    background-color:rgba(0, 174, 255, 0.454); 
     color: white;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -398,7 +398,7 @@ td button:hover {
 .addmod-form-sec__div form button {
     padding: 12px 20px;
     margin-top: 15px;
-    background-color: #0071f3;
+    background-color: #0071f3b5;
     color: white;
     border: none;
     border-radius: 8px;
@@ -414,18 +414,19 @@ td button:hover {
 
 .addmod-form-sec__div a {
     text-decoration: none;
-    color: #0071f3;
+    background-color: #ff000071;
     font-size: 16px;
-    margin-top: 15px;
+    color: #cce4ff;
+    margin-top: 11px;
     display: inline-block;
     text-align: center;
-    padding: 10px 20px;
+    padding: 6px 14px;
     border-radius: 8px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .addmod-form-sec__div a:hover {
-    background-color: #e6f1ff;
+    background-color: #ff0000;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
