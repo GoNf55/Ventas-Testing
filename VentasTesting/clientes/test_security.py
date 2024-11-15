@@ -17,7 +17,7 @@ class SecurityTests(TestCase):
             telefono='123456789',
             dni='12345678'
         )
-        
+        #se crea una categoria para asignarsela a un producto
         self.categoria = Categoria.objects.create(
             nombre="Categoria Test",
             descripcion="Descripción de prueba para la categoría"
@@ -34,8 +34,8 @@ class SecurityTests(TestCase):
         # Crear una venta de prueba y asociarla al cliente creado
         self.venta = Venta.objects.create(
             cliente=self.cliente,
-            total_venta=200.0,  # Total de la venta
-            fecha_venta='2024-11-01'  # Fecha de la venta
+            total_venta=200.0,  
+            fecha_venta='2024-11-01'  
         )
         
         # Crear un detalle de venta y añadirlo a la venta creada
