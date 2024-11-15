@@ -22,3 +22,7 @@ def del_venta(request, venta_id):
         venta.save()
         return redirect('ventas')
      return render(request, 'ventas/venta.html', {'venta': venta})
+
+
+def estadisticas_venta(request):
+     return render (request, 'ventas/estadisticas_venta.html')
