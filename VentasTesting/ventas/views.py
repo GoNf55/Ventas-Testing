@@ -2,13 +2,15 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Venta, DetalleVenta, Producto, Cliente
 from .forms import DetalleVentaForm, VentaForm
 from django.db.models import Count, Sum
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
-
+@login_required
 def ventas(request):
     lista_ventas= Venta.objects.filter(eliminado=False).order_by('id_venta')
     return render(request, 'ventas/ventas.html', {'ventas_list':lista_ventas})
 
+@login_required
 def add_venta(request):
      productos = Producto.objects.all()
      if request.method == "POST":
@@ -53,11 +55,13 @@ def add_venta(request):
 
      return render(request, 'ventas/addventa.html', {'venta_form': venta_form, 'productos':productos})
 
+@login_required
 def cons_venta(request ,venta_id):
      venta = get_object_or_404(Venta, id_venta=venta_id)
      detalles = venta.detalleVenta.all()  # Obtener todos los DetalleVenta asociados
      return render(request, 'ventas/consventa.html', {'venta': venta, 'lista_detalles' : detalles})
 
+@login_required
 def del_venta(request, venta_id):
      venta=get_object_or_404(Venta, id_venta=venta_id)
      if request.method == 'POST':
@@ -66,7 +70,7 @@ def del_venta(request, venta_id):
         return redirect('ventas')
      return render(request, 'ventas/venta.html', {'venta': venta})
 
-
+@login_required
 def estadisticas_venta(request):
     # Obtener clientes con más ventas, ordenados de mayor a menor
     clientes_con_ventas = Cliente.objects.annotate(
