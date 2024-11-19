@@ -1,0 +1,36 @@
+{% extends 'appCore/base.html' %}
+{% block title%} MGM - Registro de Ventas {% endblock %}
+{% block content %}
+{% load crispy_forms_tags %}
+<section class="title-sec">
+    <h2>Registrar Venta</h2>
+</section>
+<section class="addmod-form-sec">
+    <div class="addmod-form-sec__div">
+        <h3> Complete los datos de la venta</h3>
+        <form id="venta-form" action="" method="post">
+            {% csrf_token %}
+            {{ venta_form|crispy }}
+
+            <h4>Detalles de Venta</h4>
+            <div id="detalles-container" style=" display: flex; flex-direction: column; gap: 10px; padding: 10px; border: 1px solid #ddd; border-radius: 5px; max-height: 300px; overflow-y: auto; background-color: #f9f9f9; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); " >
+
+            </div>
+            <h4>Agregar Detalle</h4>
+            <select id="producto-select">
+                <!-- Agrega opciones de productos aquí -->
+                {% for producto in productos %}
+                <option value="{{ producto.id_producto }}" data-nombre="{{ producto.nombre }}" data-precio="{{ producto.precio }}" data-categoria="{{ producto.categoria }}"> {{ producto.nombre }} - ${{ producto.precio }}</option>
+                {% endfor %}
+            </select>
+            <input type="number" id="cantidad-input" min="1" value="1">
+            <button type="button" id="add-detalle-btn">Agregar Detalle</button>
+
+            <h4>Total: $<span id="total-venta">0.00</span></h4>
+
+            <button type="submit">Registrar Venta</button>
+        </form>  
+        <a href="{% url 'ventas' %}">Cancelar</a>
+    </div>
+</section>
+{% endblock %}
