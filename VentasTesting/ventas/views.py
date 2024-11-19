@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Venta, DetalleVenta, Producto
+from .models import Venta, DetalleVenta, Producto, Cliente
 from .forms import DetalleVentaForm, VentaForm
+from django.db.models import Count, Sum
 
 # Create your views here.
 
@@ -67,4 +68,27 @@ def del_venta(request, venta_id):
 
 
 def estadisticas_venta(request):
-     return render (request, 'ventas/statsventas.html')
+    # Obtener clientes con más ventas, ordenados de mayor a menor
+    clientes_con_ventas = Cliente.objects.annotate(
+        total_ventas=Count('venta')
+    ).order_by('-total_ventas')
+
+    # Identificar el cliente con más ventas
+    cliente_con_mas_ventas = clientes_con_ventas.first()
+
+    # Obtener productos más vendidos en términos de cantidad
+    productos_mas_vendidos = Producto.objects.annotate(
+          total_vendido=Sum('detalleventa__cantidad')
+     ).filter(total_vendido__isnull=False).order_by('-total_vendido')
+
+    # Identificar el producto más vendido
+    producto_mas_vendido = productos_mas_vendidos.first()
+
+
+    context = {
+        'clientes_con_ventas': clientes_con_ventas,
+        'cliente_con_mas_ventas': cliente_con_mas_ventas,
+        'productos_mas_vendidos': productos_mas_vendidos,
+        'producto_mas_vendido': producto_mas_vendido,
+     }
+    return render (request, 'ventas/statsventas.html', context)
