@@ -571,3 +571,90 @@ form input[type="submit"]:hover {
 .agregar__div a:hover {
     background-color: #005bb5;
 }
+
+
+/*estilos template de estadisticas de ventas*/
+
+/* Sección de estadísticas */
+.stats-sec {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+/* Contenedor de tablas */
+.table-container {
+    margin: 20px;
+    width: 45%;
+    min-width: 300px;
+    background-color: #ddd;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+/* Título de cada tabla */
+.table-container h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Párrafo para el cliente y producto más destacados */
+.table-container p {
+    font-weight: bold;
+    color: #0056b3;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Estilo de la tabla */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 16px;
+    text-align: left;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Cabecera de la tabla */
+.styled-table thead tr {
+    background-color: #0071f3;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.styled-table th, .styled-table td {
+    padding: 12px 15px;
+}
+
+/* Filas del cuerpo de la tabla */
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+/* Fondo alterno para filas */
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+/* Última fila con borde destacado */
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #005e98;
+}
+
+/* Hover sobre las filas */
+.styled-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .table-container {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
