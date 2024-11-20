@@ -2,6 +2,7 @@ from django.test import TestCase
 from stock.models import Categoria, Producto
 from django.urls import reverse
 from time import time
+from django.contrib.auth.models import User
 
 class PerformanceTests(TestCase):
     '''
@@ -37,6 +38,13 @@ class PerformanceTests(TestCase):
             for i in range(100)
         ]
         Producto.objects.bulk_create(productos)  # Inserción masiva en la base de datos
+        # Crear y autenticar un usuario para las pruebas
+        cls.user = User.objects.create_user(username='testuser', password='password')
+
+    def setUp(self):
+        # Iniciar sesión con el usuario creado
+        self.client.login(username='testuser', password='password')    
+
 
     def test_page_load_time(self):
         """

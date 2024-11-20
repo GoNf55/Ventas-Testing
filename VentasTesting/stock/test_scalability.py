@@ -1,6 +1,7 @@
 from django.test import TestCase
 from stock.models import Categoria, Producto
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 class ScalabilityTests(TestCase):
     """
@@ -31,6 +32,13 @@ class ScalabilityTests(TestCase):
             for i in range(1000)
         ]
         Producto.objects.bulk_create(productos)  # Inserción masiva en la base de datos
+        # Crear y autenticar un usuario para las pruebas
+        cls.user = User.objects.create_user(username='testuser', password='password')
+
+    def setUp(self):
+        # Iniciar sesión con el usuario creado
+        self.client.login(username='testuser', password='password')    
+
 
     def test_large_number_of_products_handling(self):
         """

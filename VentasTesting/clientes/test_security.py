@@ -38,13 +38,13 @@ class SecurityTests(TestCase):
             fecha_venta='2024-11-01'  
         )
         
-        # Crear un detalle de venta y añadirlo a la venta creada
+        # Crear un detalle de venta y asociarlo a la venta
         self.detalle_venta = DetalleVenta.objects.create(
+            venta=self.venta,
             producto=self.producto,
             cantidad=2,
             subtotal=200.0
         )
-        self.venta.detalleVenta.add(self.detalle_venta)
 
         # Crear un usuario de prueba para los tests de autenticación
         self.user = get_user_model().objects.create_user(
