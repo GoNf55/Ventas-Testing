@@ -1,10 +1,15 @@
 from django.test import TestCase
 from django.urls import reverse
 from clientes.models import Cliente
+from django.contrib.auth.models import User  # Para crear usuarios
 
 class ClienteIntegrationTests(TestCase):
     
     def setUp(self):
+        # Crear un usuario y autenticarlo
+        self.user = User.objects.create_user(username='testuser', password='testpassword')
+        self.client.login(username='testuser', password='testpassword')
+
         # Crear datos iniciales para las pruebas
         self.cliente1 = Cliente.objects.create(
             nombre="Juan", apellido="Perez", email="juan.perez@example.com", telefono="123456789", dni="12345678"

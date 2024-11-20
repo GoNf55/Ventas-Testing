@@ -1,9 +1,14 @@
 from django.test import TestCase
 from django.urls import reverse
 from .models import Producto, Categoria
+from django.contrib.auth.models import User  # Para crear usuarios
 
 class ProductoIntegrationTests(TestCase):
     def setUp(self):
+        # Crear un usuario y autenticarlo
+        self.user = User.objects.create_user(username='testuser', password='testpassword')
+        self.client.login(username='testuser', password='testpassword')
+        
         # Crear una categoría para usar en los productos
         self.categoria = Categoria.objects.create(nombre="electronica", descripcion="dispositivos electronicos")
         

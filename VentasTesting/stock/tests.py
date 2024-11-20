@@ -3,10 +3,15 @@ from django.test import TestCase
 from django.urls import reverse
 from django.utils.http import urlencode
 from .models import Producto, Categoria
+from django.contrib.auth.models import User  # Para crear usuarios
 
 class ProductoIntegrationTest(TestCase):
 
     def setUp(self):
+        # Crear un usuario y autenticarlo
+        self.user = User.objects.create_user(username='testuser', password='testpassword')
+        self.client.login(username='testuser', password='testpassword')
+        
         # Crear una categoría para los productos
         self.categoria = Categoria.objects.create(nombre="Categoria 1", descripcion="Descripción de categoría")
 
@@ -59,7 +64,17 @@ class ProductoIntegrationTest(TestCase):
         self.assertEqual(self.producto_1.precio, 300.00)
 
     def test_producto_deletion_view(self):
-        response = self.client.get(reverse('delproducto', args=[self.producto_1.id_producto]))
-        self.assertEqual(response.status_code, 302)  # Redirige a la lista de productos
+        # Enviar la solicitud para eliminar un producto
+        response = self.client.post(reverse('delproducto', args=[self.producto_1.id_producto]))
+        
+        # Verificar que redirige correctamente
+        self.assertEqual(response.status_code, 302)  # Código de redirección
+
+        # Asegurar que el producto ha sido eliminado
         self.assertFalse(Producto.objects.filter(id_producto=self.producto_1.id_producto).exists())
+
+        # Verificar que la redirección lleva a 'productos.html' (lista de productos)
+        follow_response = self.client.get(response.url)
+        self.assertEqual(follow_response.status_code, 200)
+        self.assertNotContains(follow_response, "Producto 1")
 
